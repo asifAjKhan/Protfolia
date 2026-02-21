@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 import Image from 'next/image'
+import NavLink from './navLink'
 
 const Links = [
   {
@@ -26,13 +27,11 @@ const Links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false)
   return (
-    <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+    <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl'>
       {/* links */}
       <div className='hidden md:flex gap-4 w-1/3'>
         {Links.map((link) => (
-          <Link href={link.url} key={link.title}>
-            {link.title}
-          </Link>
+          <NavLink link={link} key={link.title} />
         ))}
       </div>
 
